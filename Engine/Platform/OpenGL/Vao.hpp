@@ -2,42 +2,45 @@
 
 #include <glad/glad.h>
 
-class VBO;
-class EBO;
-
-class VAO
+namespace MilkChoco
 {
-public:
-	GLuint ID{0};
+	class VBO;
+	class EBO;
 
-public:
-	VAO();
-	~VAO();
+	class VAO
+	{
+	public:
+		GLuint ID{0};
 
-	VAO(const VAO&) = delete;
-	VAO& operator=(const VAO&) = delete;
+	public:
+		VAO();
+		~VAO();
 
-	VAO(VAO&& other) noexcept;
-	VAO& operator=(VAO&& other) noexcept;
+		VAO(const VAO&) = delete;
+		VAO& operator=(const VAO&) = delete;
 
-	void LinkAttrib(
-		VBO& vbo,
-		GLuint layout
-	);
+		VAO(VAO&& other) noexcept;
+		VAO& operator=(VAO&& other) noexcept;
 
-	void LinkAttrib(
-		VBO& vbo,
-		GLuint layout,
-		GLuint numComponents,
-		GLenum type,
-		GLsizeiptr stride,
-		void* offset
-	);
+		void LinkAttrib(
+			VBO& vbo,
+			GLuint layout
+		);
 
-	void LinkEBO(EBO& ebo);
+		void LinkAttrib(
+			VBO& vbo,
+			GLuint layout,
+			GLuint numComponents,
+			GLenum type,
+			GLsizeiptr stride,
+			void* offset
+		);
 
-	void Bind() const;
-	static void Unbind();
+		void LinkEBO(EBO& ebo);
 
-	void Delete() noexcept;
-};
+		void Bind() const;
+		static void Unbind();
+
+		void Delete() noexcept;
+	};
+}

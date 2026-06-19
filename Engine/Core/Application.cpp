@@ -9,7 +9,7 @@ namespace MilkChoco
 
         OnInit();
 
-        while (m_Running)
+        while (!m_window->ShouldClose())
         {
             Time::Update();   // UPDATE EVERY FRAME
 
@@ -22,6 +22,11 @@ namespace MilkChoco
 
     void Application::Stop()
     {
-        m_Running = false;
+        m_window->RequestClose();
+    }
+
+    Application::Application(int width, int height, const char *title, bool fullscreen)
+    {
+        m_window = std::make_unique<GLFWWindow>(width, height, title, fullscreen);
     }
 }

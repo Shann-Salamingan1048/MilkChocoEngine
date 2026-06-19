@@ -1,30 +1,32 @@
 #pragma once
 
 #include <glad/glad.h>
-
-class EBO
+namespace MilkChoco
 {
-public:
-	GLuint ID{0};
+	class EBO
+	{
+	public:
+		GLuint ID{0};
 
-public:
-	EBO() = default;
+	public:
+		EBO() = default;
 
-	EBO(GLuint* indices, GLsizeiptr size);
-	EBO(const GLuint* indices, GLsizeiptr size);
+		EBO(GLuint* indices, GLsizeiptr size);
+		EBO(const GLuint* indices, GLsizeiptr size);
 
-	~EBO();
+		~EBO();
 
-	EBO(const EBO&) = delete;
-	EBO& operator=(const EBO&) = delete;
+		EBO(const EBO&) = delete;
+		EBO& operator=(const EBO&) = delete;
 
-	EBO(EBO&& other) noexcept;
-	EBO& operator=(EBO&& other) noexcept;
+		EBO(EBO&& other) noexcept;
+		EBO& operator=(EBO&& other) noexcept;
 
-	void SetData(const GLuint* indices, GLsizeiptr size);
+		void SetData(const GLuint* indices, GLsizeiptr size);
 
-	void Bind() const;
-	static void Unbind();
+		void Bind() const;
+		static void Unbind();
 
-	void Delete() noexcept;
-};
+		void Delete() noexcept;
+	};
+}

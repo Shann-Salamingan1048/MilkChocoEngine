@@ -1,11 +1,13 @@
 #pragma once
-
+#include <Platform/Window/GLFWWindow.hpp>
+#include <memory>
 namespace MilkChoco
 {
+    class GLFWWindow;
     class Application
     {
     public:
-        Application() = default;
+        explicit Application(int width, int height, const char* title, bool fullscreen);
         virtual ~Application() = default;
 
         void Run();
@@ -17,6 +19,6 @@ namespace MilkChoco
         virtual void OnShutDown() = 0;
 
     private:
-        bool m_Running = false;
+        std::unique_ptr<GLFWWindow> m_window;
     };
 }

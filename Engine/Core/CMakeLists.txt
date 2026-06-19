@@ -9,5 +9,12 @@ target_sources(EngineCore
 
 target_include_directories(EngineCore
         PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/..
+)
+target_link_libraries(EngineCore
+        PUBLIC EnginePlatform
+        PUBLIC glfw
+        PUBLIC glad
+        PUBLIC glm
+        PUBLIC stb
 )

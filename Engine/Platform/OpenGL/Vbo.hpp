@@ -1,30 +1,32 @@
 #pragma once
 
 #include <glad/glad.h>
-
-class VBO
+namespace MilkChoco
 {
-public:
-	GLuint ID{0};
+	class VBO
+	{
+	public:
+		GLuint ID{0};
 
-public:
-	VBO() = default;
+	public:
+		VBO() = default;
 
-	VBO(GLfloat* vertices, GLsizeiptr size);
-	VBO(const GLfloat* vertices, GLsizeiptr size);
+		VBO(GLfloat* vertices, GLsizeiptr size);
+		VBO(const GLfloat* vertices, GLsizeiptr size);
 
-	~VBO();
+		~VBO();
 
-	VBO(const VBO&) = delete;
-	VBO& operator=(const VBO&) = delete;
+		VBO(const VBO&) = delete;
+		VBO& operator=(const VBO&) = delete;
 
-	VBO(VBO&& other) noexcept;
-	VBO& operator=(VBO&& other) noexcept;
+		VBO(VBO&& other) noexcept;
+		VBO& operator=(VBO&& other) noexcept;
 
-	void SetData(const GLfloat* vertices, GLsizeiptr size);
+		void SetData(const GLfloat* vertices, GLsizeiptr size);
 
-	void Bind() const;
-	static void Unbind();
+		void Bind() const;
+		static void Unbind();
 
-	void Delete() noexcept;
-};
+		void Delete() noexcept;
+	};
+}

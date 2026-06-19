@@ -2,7 +2,7 @@ add_library(EnginePlatform STATIC)
 
 target_sources(EnginePlatform
         PRIVATE
-
+        Window/GLFWWindow.cpp
         OpenGL/Vao.cpp
         OpenGL/Vbo.cpp
         OpenGL/Shader.cpp
@@ -12,7 +12,7 @@ target_sources(EnginePlatform
 
 target_include_directories(EnginePlatform
         PUBLIC
-        OpenGL
+        ${CMAKE_CURRENT_SOURCE_DIR}/..
 )
 
 target_link_libraries(EnginePlatform
@@ -20,4 +20,5 @@ target_link_libraries(EnginePlatform
         PUBLIC glfw
         PUBLIC glad
         PUBLIC glm
+        PUBLIC stb
 )
