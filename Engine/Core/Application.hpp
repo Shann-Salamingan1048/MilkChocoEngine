@@ -7,7 +7,7 @@ namespace MilkChoco
     class Application
     {
     public:
-        explicit Application(int width, int height, const char* title, bool fullscreen);
+        explicit Application(int width, int height, const char* title, bool fullscreen = false);
         virtual ~Application() = default;
 
         void Run();

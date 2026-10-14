@@ -1,6 +1,6 @@
 #pragma once
 #include <glad/glad.h> // Required for GLboolean
-#include <glm/gtc/matrix_transform.hpp>
+#include <gtc/matrix_transform.hpp>
 
 namespace CameraUtils
 {

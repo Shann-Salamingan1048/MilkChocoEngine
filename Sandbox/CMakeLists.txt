@@ -7,6 +7,6 @@ target_sources(Sandbox PRIVATE
 
 target_link_libraries(Sandbox
         PUBLIC EngineCore
-        PUBLIC EnginePlatform
-        PUBLIC EngineRendering
+        PUBLIC Platform
+        PUBLIC Rendering
 )

@@ -1,6 +1,6 @@
-add_library(EnginePlatform STATIC)
+add_library(Platform STATIC)
 
-target_sources(EnginePlatform
+target_sources(Platform
         PRIVATE
         Window/GLFWWindow.cpp
         OpenGL/Vao.cpp
@@ -10,13 +10,13 @@ target_sources(EnginePlatform
         OpenGL/Texture.cpp
 )
 
-target_include_directories(EnginePlatform
+target_include_directories(Platform
         PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/..
 )
 
-target_link_libraries(EnginePlatform
-        PUBLIC EngineCore
+target_link_libraries(Platform
+        PUBLIC Core
         PUBLIC glfw
         PUBLIC glad
         PUBLIC glm

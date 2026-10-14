@@ -17,9 +17,9 @@ add_subdirectory(ThirdParty)
 # -------------------------
 add_subdirectory(Engine/Core)
 add_subdirectory(Engine/Platform)
-add_subdirectory(Engine/Rendering)
+add_subdirectory(Engine/Scene)
 #add_subdirectory(Engine/Input)
-#add_subdirectory(Engine/Scene)
+#add_subdirectory(Engine/Rendering)
 #add_subdirectory(Engine/Assets)
 #add_subdirectory(Engine/Math)
 #

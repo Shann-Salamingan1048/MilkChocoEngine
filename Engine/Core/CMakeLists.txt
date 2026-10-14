@@ -1,18 +1,18 @@
-add_library(EngineCore STATIC)
+add_library(Core STATIC)
 
-target_sources(EngineCore
+target_sources(Core
         PRIVATE
         Application.cpp
         Time.cpp
         Logger.cpp
 )
 
-target_include_directories(EngineCore
+target_include_directories(Core
         PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/..
 )
-target_link_libraries(EngineCore
-        PUBLIC EnginePlatform
+target_link_libraries(Core
+        PUBLIC Platform
         PUBLIC glfw
         PUBLIC glad
         PUBLIC glm
